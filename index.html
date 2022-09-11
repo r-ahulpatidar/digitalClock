@@ -3,32 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Digital Clock</title>
+  <title>Simple Calculator</title>
+<style>
+   .title {
+     border: 2px solid black;
+     width: 210px;
+     text-align: center;
+     color: violet;
+     margin-bottom: 10px;
+   }
+   input[type="button"] {
+     background-color: #aaa;
+     color: white;
+     border: 2px solid black;
+     width: 100%;
+   }
+   input[type="text"] {
+     background-color: white;
+     border: 2px solid black;
+     width: 100%;
+   }
+</style>
+
 </head>
 <body>
-    <h1><div id="myDigitalClock"></div></h1>
-<script>
-     function showTimes() {
-       var date = new Date();
-       var h = date.getHours();
-       var m = date.getMinutes();
-       var s = date.getSeconds();
-       var session = "AM";
+   <div class="title">My Simple Calculator</div>
 
-       if(h == 0) {
-             h = 12;
-       }
-       if(h > 12) {
-         h = h - 12;
-         session = "PM";
-       }
-       h = (h < 10) ? "0" + h : h;
-       m = (m < 10) ? "0" + m : m;
-       s = (s < 10) ? "0" + s : s;
-       document.getElementById('myDigitalClock').innerHTML = "Time- " + h + ":" + m + ":" + s + " " + session;
-       setTimeout(showTimes, 1000);
+<table border="0">
+  <tr>
+    <td colspan="3"><input type="text" id="result"></td>
+    <td><input type="button" value="C" onclick="clr()"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="1" onclick="res('1')"></td>
+    <td><input type="button" value="2" onclick="res('2')"></td>
+    <td><input type="button" value="3" onclick="res('3')"></td>
+    <td><input type="button" value="/" onclick="res('/')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="4" onclick="res('4')"></td>
+    <td><input type="button" value="5" onclick="res('5')"></td>
+    <td><input type="button" value="6" onclick="res('6')"></td>
+    <td><input type="button" value="-" onclick="res('-')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="7" onclick="res('7')"></td>
+    <td><input type="button" value="8" onclick="res('8')"></td>
+    <td><input type="button" value="9" onclick="res('9')"></td>
+    <td><input type="button" value="+" onclick="res('+')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="." onclick="res('.')"></td>
+    <td><input type="button" value="0" onclick="res('0')"></td>
+    <td><input type="button" value="=" onclick="solve()"></td>
+    <td><input type="button" value="*" onclick="res('*')"></td>
+  </tr>
+</table>
+
+
+<script>
+     function res(val) {
+       document.getElementById('result').value += val;
      }
-     showTimes();
+     function solve() {
+       let x = document.getElementById('result').value;
+        let y = eval(x);
+        document.getElementById('result').value = y;
+     }
+     function clr() {
+       document.getElementById('result').value = "";
+     }
+
 </script>
 </body>
 </html>
