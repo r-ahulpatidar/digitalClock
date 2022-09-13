@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Background Changer</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 20px 100px;
+    }
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 25px;
+      text-align: justify;
+    }
+    .btn {
+      width: 20px;
+      height: 20px;
+      border: 2px solid black;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    #white {background-color: white;}
+    #violet {background-color: violet;}
+    #pink {background-color: pink;}
+    #black {background-color: black;}
+
+    #color-switch {
+      text-align: right;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="color-switch">
+    <span class="btn" id="white" onclick="changeBG('white')"></span>
+    <span class="btn" id="violet" onclick="changeBG('violet')"></span>
+    <span class="btn" id="pink" onclick="changeBG('pink')"></span>
+    <span class="btn" id="black" onclick="changeBG('black')"></span>
+  </div>
+  <h1 class="text">About Us</h1>
+  <img src="https://parentbooster.org/disk/s3/images/meta/2/AdobeStock_105342256.jpeg" alt="about us">
+  <p class="text">A perfect and well-written paragraph comprises a key sentence, applicable supporting sentences, and a last (or transition) sentence. This structure is fundamental to maintaining your paragraph centred on the main concept and creating a clear and concise photo.In order to add something interesting, and adding an interesting fact in your content does not necessarily follow the conventional paragraph structure, it’s more about scene building and continuing a story. Properly-written paragraphs are a staple of suitable flash fiction and short fiction writing, as short testimonies need to target a principal concept. When your sentences are unified and connected with other sentences, you can write a good paragraph.
+  </p>
+  <script>
+  function changeBG(color) {
+    document.body.style.backgroundColor = color;
+    let txt = document.getElementsByClassName('text');
+    if(color == "black") {
+      for(let elm of txt) {
+        elm.style.color = "white";
+      }
+    } else {
+      for(let elm of txt) {
+        elm.style.color = "black";
+      }
+    }
+  }
+  </script>
+</body>
+</html>
