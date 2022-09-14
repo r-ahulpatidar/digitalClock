@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sticky Navbar</title>
+  <style>
+    body {
+      margin: 0px;
+    }
+    #header {
+      text-align: center;
+    }
+    #logo {
+      width: 250px;
+      height: auto;
+    }
+    #menu-bar {
+      text-align: center;
+      background-color: violet;
+    }
+    #menu-bar li {
+      list-style: none;
+      display: inline-block;
+      padding: 10px 20px;
+      margin: auto;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    #container {
+      text-align: center;
+      text-decoration: underline;
+      padding: 50px 100px;
+    }
+    #image {
+      width: 100%;
+      height: auto;
+    }
+    p {
+      text-align: justify;
+      text-decoration: none;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <img src="https://pngimg.com/uploads/un/un_PNG20.png" alt="logo" id="logo">
+  </div>
+  <nav id="menu-bar">
+  </ul>
+      <li>Home</li>
+      <li>Menu</li>
+      <li>Link</li>
+      <li>Page</li>
+      <li>Contact Us</li>
+    </ul>
+  </nav>
+  <div id="container">
+    <h1>About Us</h1>
+    <img src="https://tse3.mm.bing.net/th?id=OIP.BYuUgtA7HtAtQ9zVb_5QsQHaE6&pid=Api&P=0" alt="grass" id="image">
+    <p>There are many causes of sound pollution. Firstly, the enormous growth of the human population and the increased use of machines in industrial works are the main causes of noise pollution. Secondly, hydraulic horns and whistles of different motor vehicles plying on the roads also cause serious sound pollution. Thirdly, the grinding sounds of mills and factories also contribute to noise pollution to a great extent. Besides, listening to music using loudspeakers, beating various kinds of drums and shouting of slogans on the loudspeaker are also responsible. There are many bad impacts of sound pollution. It causes many fatal diseases like heart attack, hypertension, blood pressure, deafness, etc. The normal growth of the children and the patients in the hospital are greatly affected by sound. High noise Small birds and animals. It often hinders the students to concentrate on their studies. Nobody is conscious of this type of pollution. We have to make people aware of the bad consequence of noise pollution.
+    </p>
+  </div>
+  <script>
+   window.addEventListener("scroll", function(){
+     let navBar = document.getElementById('menu-bar');
+     if(window.pageYOffset >= 254) {
+       navBar.classList.add('sticky');
+     }else {
+       navBar.classList.remove('sticky');
+     }
+
+   });
+  </script>
+</body>
+</html>
